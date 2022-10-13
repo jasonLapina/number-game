@@ -1,0 +1,70 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  input {
+    font-size: 6rem;
+    width: 20rem;
+    text-align: center;
+    font-family: inherit;
+  }
+  label {
+    font-size: 4rem;
+  }
+  button {
+    cursor: pointer;
+    font-family: inherit;
+    color: var(--color-dark);
+    grid-row: 3;
+    border: none;
+    font-size: 5rem;
+    background-color: var(--color-grey-dark);
+    padding: 4px 8px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    justify-self: end;
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.mystery {
+  font-size: 8rem;
+  grid-column: 1/-1;
+  justify-self: center;
+}
+
+%score {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  justify-self: start;
+  font-size: 2.4rem;
+}
+
+.score {
+  @extend %score;
+  grid-column: 3;
+  grid-row: 2;
+  span {
+    color: orangered;
+  }
+}
+.highscore {
+  @extend %score;
+  grid-column: 3;
+  grid-row: 3;
+  span {
+    color: green;
+  }
+}

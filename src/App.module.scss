@@ -1,0 +1,31 @@
+.container {
+  max-width: 150rem;
+  background-color: var(--color-primary);
+  margin: 8rem auto;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  /* TEMPORARY HEIGHT */
+  height: 80rem;
+  padding: 4rem 6rem;
+  h1 {
+    text-align: center;
+    letter-spacing: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+    }
+  }
+}
+
+ion-icon {
+  cursor: pointer;
+  font-size: 4.8rem;
+  color: var(--color-dark);
+}
