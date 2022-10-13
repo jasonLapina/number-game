@@ -41,21 +41,32 @@ const App = () => {
       setHighScore(score);
     }
 
+    // IF USER GETS 0 POINTS
+    if (score < 1) {
+      setHint(`You Lost 😢`);
+    }
+
     // IF GUESS IS TOO LOW
     else if (guess < mysteryNum) {
       userIsWrong();
+
       setScore((prevScore) => prevScore - 1);
       setHint('Too low 👍');
     }
     // IF GUESS IS TOO HIGH
     else if (guess > mysteryNum) {
       userIsWrong();
+
       setScore((prevScore) => prevScore - 1);
       setHint('Too high 👎');
     }
   };
   return (
-    <div className={`${classes.container} ${userIsCorrect ? classes.win : ''}`}>
+    <div
+      className={`${classes.container} ${userIsCorrect ? classes.win : ''} ${
+        score < 1 ? classes.lose : ''
+      }`}
+    >
       <h1>GUESS MY NUMBER</h1>
       <header>
         <p>(Between 1 - 20)</p>
